@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.29 on 2020-06-30 09:05:04.
+ * Generated for Laravel 5.7.29 on 2020-06-30 09:17:25.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -18378,327 +18378,275 @@ namespace {
          * @static
          */
         public static function insertUsing($columns, $query)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->insertUsing($columns, $query);
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->insertUsing($columns, $query);
+            }
+
+            /**
+             * Insert or update a record matching the attributes, and fill it with values.
+             *
+             * @param array $attributes
+             * @param array $values
+             * @return bool
+             * @static
+             */
+            public static function updateOrInsert($attributes, $values = [])
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->updateOrInsert($attributes, $values);
+            }
+
+            /**
+             * Run a truncate statement on the table.
+             *
+             * @return void
+             * @static
+             */
+            public static function truncate()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                $instance->truncate();
+            }
+
+            /**
+             * Create a raw database expression.
+             *
+             * @param mixed $value
+             * @return \Illuminate\Database\Query\Expression
+             * @static
+             */
+            public static function raw($value)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->raw($value);
+            }
+
+            /**
+             * Get the current query value bindings in a flattened array.
+             *
+             * @return array
+             * @static
+             */
+            public static function getBindings()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->getBindings();
+            }
+
+            /**
+             * Get the raw array of bindings.
+             *
+             * @return array
+             * @static
+             */
+            public static function getRawBindings()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->getRawBindings();
+            }
+
+            /**
+             * Set the bindings on the query builder.
+             *
+             * @param array $bindings
+             * @param string $type
+             * @return \Illuminate\Database\Query\Builder
+             * @throws \InvalidArgumentException
+             * @static
+             */
+            public static function setBindings($bindings, $type = 'where')
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->setBindings($bindings, $type);
+            }
+
+            /**
+             * Add a binding to the query.
+             *
+             * @param mixed $value
+             * @param string $type
+             * @return \Illuminate\Database\Query\Builder
+             * @throws \InvalidArgumentException
+             * @static
+             */
+            public static function addBinding($value, $type = 'where')
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->addBinding($value, $type);
+            }
+
+            /**
+             * Merge an array of bindings into our bindings.
+             *
+             * @param \Illuminate\Database\Query\Builder $query
+             * @return \Illuminate\Database\Query\Builder
+             * @static
+             */
+            public static function mergeBindings($query)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->mergeBindings($query);
+            }
+
+            /**
+             * Get the database query processor instance.
+             *
+             * @return \Illuminate\Database\Query\Processors\Processor
+             * @static
+             */
+            public static function getProcessor()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->getProcessor();
+            }
+
+            /**
+             * Get the query grammar instance.
+             *
+             * @return \Illuminate\Database\Query\Grammars\Grammar
+             * @static
+             */
+            public static function getGrammar()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->getGrammar();
+            }
+
+            /**
+             * Use the write pdo for query.
+             *
+             * @return \Illuminate\Database\Query\Builder
+             * @static
+             */
+            public static function useWritePdo()
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->useWritePdo();
+            }
+
+            /**
+             * Clone the query without the given properties.
+             *
+             * @param array $properties
+             * @return static
+             * @static
+             */
+            public static function cloneWithout($properties)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->cloneWithout($properties);
+            }
+
+            /**
+             * Clone the query without the given bindings.
+             *
+             * @param array $except
+             * @return static
+             * @static
+             */
+            public static function cloneWithoutBindings($except)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->cloneWithoutBindings($except);
+            }
+
+            /**
+             * Register a custom macro.
+             *
+             * @param string $name
+             * @param object|callable $macro
+             * @return void
+             * @static
+             */
+            public static function macro($name, $macro)
+            {
+                                \Illuminate\Database\Query\Builder::macro($name, $macro);
+            }
+
+            /**
+             * Mix another object into the class.
+             *
+             * @param object $mixin
+             * @return void
+             * @throws \ReflectionException
+             * @static
+             */
+            public static function mixin($mixin)
+            {
+                                \Illuminate\Database\Query\Builder::mixin($mixin);
+            }
+
+            /**
+             * Checks if macro is registered.
+             *
+             * @param string $name
+             * @return bool
+             * @static
+             */
+            public static function hasMacro($name)
+            {
+                                return \Illuminate\Database\Query\Builder::hasMacro($name);
+            }
+
+            /**
+             * Dynamically handle calls to the class.
+             *
+             * @param string $method
+             * @param array $parameters
+             * @return mixed
+             * @throws \BadMethodCallException
+             * @static
+             */
+            public static function macroCall($method, $parameters)
+            {
+                                /** @var \Illuminate\Database\Query\Builder $instance */
+                                return $instance->macroCall($method, $parameters);
+            }
         }
 
-        /**
-         * Insert or update a record matching the attributes, and fill it with values.
-         *
-         * @param array $attributes
-         * @param array $values
-         *
-         * @return bool
-         * @static
-         */
-        public static function updateOrInsert($attributes, $values = [])
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->updateOrInsert($attributes, $values);
-        }
+    class Event extends \Illuminate\Support\Facades\Event {}
 
-        /**
-         * Run a truncate statement on the table.
-         *
-         * @return void
-         * @static
-         */
-        public static function truncate()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            $instance->truncate();
-        }
+    class File extends \Illuminate\Support\Facades\File {}
 
-        /**
-         * Create a raw database expression.
-         *
-         * @param mixed $value
-         *
-         * @return \Illuminate\Database\Query\Expression
-         * @static
-         */
-        public static function raw($value)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->raw($value);
-        }
+    class Gate extends \Illuminate\Support\Facades\Gate {}
 
-        /**
-         * Get the current query value bindings in a flattened array.
-         *
-         * @return array
-         * @static
-         */
-        public static function getBindings()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->getBindings();
-        }
+    class Hash extends \Illuminate\Support\Facades\Hash {}
 
-        /**
-         * Get the raw array of bindings.
-         *
-         * @return array
-         * @static
-         */
-        public static function getRawBindings()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->getRawBindings();
-        }
+    class Lang extends \Illuminate\Support\Facades\Lang {}
 
-        /**
-         * Set the bindings on the query builder.
-         *
-         * @param array  $bindings
-         * @param string $type
-         *
-         * @return \Illuminate\Database\Query\Builder
-         * @throws \InvalidArgumentException
-         * @static
-         */
-        public static function setBindings($bindings, $type = 'where')
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->setBindings($bindings, $type);
-        }
+    class Log extends \Illuminate\Support\Facades\Log {}
 
-        /**
-         * Add a binding to the query.
-         *
-         * @param mixed  $value
-         * @param string $type
-         *
-         * @return \Illuminate\Database\Query\Builder
-         * @throws \InvalidArgumentException
-         * @static
-         */
-        public static function addBinding($value, $type = 'where')
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->addBinding($value, $type);
-        }
+    class Mail extends \Illuminate\Support\Facades\Mail {}
 
-        /**
-         * Merge an array of bindings into our bindings.
-         *
-         * @param \Illuminate\Database\Query\Builder $query
-         *
-         * @return \Illuminate\Database\Query\Builder
-         * @static
-         */
-        public static function mergeBindings($query)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->mergeBindings($query);
-        }
+    class Notification extends \Illuminate\Support\Facades\Notification {}
 
-        /**
-         * Get the database query processor instance.
-         *
-         * @return \Illuminate\Database\Query\Processors\Processor
-         * @static
-         */
-        public static function getProcessor()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->getProcessor();
-        }
+    class Password extends \Illuminate\Support\Facades\Password {}
 
-        /**
-         * Get the query grammar instance.
-         *
-         * @return \Illuminate\Database\Query\Grammars\Grammar
-         * @static
-         */
-        public static function getGrammar()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->getGrammar();
-        }
+    class Queue extends \Illuminate\Support\Facades\Queue {}
 
-        /**
-         * Use the write pdo for query.
-         *
-         * @return \Illuminate\Database\Query\Builder
-         * @static
-         */
-        public static function useWritePdo()
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->useWritePdo();
-        }
+    class Redirect extends \Illuminate\Support\Facades\Redirect {}
 
-        /**
-         * Clone the query without the given properties.
-         *
-         * @param array $properties
-         *
-         * @return static
-         * @static
-         */
-        public static function cloneWithout($properties)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->cloneWithout($properties);
-        }
+    class Request extends \Illuminate\Support\Facades\Request {}
 
-        /**
-         * Clone the query without the given bindings.
-         *
-         * @param array $except
-         *
-         * @return static
-         * @static
-         */
-        public static function cloneWithoutBindings($except)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->cloneWithoutBindings($except);
-        }
+    class Response extends \Illuminate\Support\Facades\Response {}
 
-        /**
-         * Register a custom macro.
-         *
-         * @param string          $name
-         * @param object|callable $macro
-         *
-         * @return void
-         * @static
-         */
-        public static function macro($name, $macro)
-        {
-            \Illuminate\Database\Query\Builder::macro($name, $macro);
-        }
+    class Route extends \Illuminate\Support\Facades\Route {}
 
-        /**
-         * Mix another object into the class.
-         *
-         * @param object $mixin
-         *
-         * @return void
-         * @throws \ReflectionException
-         * @static
-         */
-        public static function mixin($mixin)
-        {
-            \Illuminate\Database\Query\Builder::mixin($mixin);
-        }
+    class Schema extends \Illuminate\Support\Facades\Schema {}
 
-        /**
-         * Checks if macro is registered.
-         *
-         * @param string $name
-         *
-         * @return bool
-         * @static
-         */
-        public static function hasMacro($name)
-        {
-            return \Illuminate\Database\Query\Builder::hasMacro($name);
-        }
+    class Session extends \Illuminate\Support\Facades\Session {}
 
-        /**
-         * Dynamically handle calls to the class.
-         *
-         * @param string $method
-         * @param array  $parameters
-         *
-         * @return mixed
-         * @throws \BadMethodCallException
-         * @static
-         */
-        public static function macroCall($method, $parameters)
-        {
-            /** @var \Illuminate\Database\Query\Builder $instance */
-            return $instance->macroCall($method, $parameters);
-        }
-    }
+    class Storage extends \Illuminate\Support\Facades\Storage {}
 
-    class Event extends \Illuminate\Support\Facades\Event
-    {
-    }
+    class URL extends \Illuminate\Support\Facades\URL {}
 
-    class File extends \Illuminate\Support\Facades\File
-    {
-    }
+    class Validator extends \Illuminate\Support\Facades\Validator {}
 
-    class Gate extends \Illuminate\Support\Facades\Gate
-    {
-    }
+    class View extends \Illuminate\Support\Facades\View {}
 
-    class Hash extends \Illuminate\Support\Facades\Hash
-    {
-    }
+    class Debugbar extends \Barryvdh\Debugbar\Facade {}
 
-    class Lang extends \Illuminate\Support\Facades\Lang
-    {
-    }
-
-    class Log extends \Illuminate\Support\Facades\Log
-    {
-    }
-
-    class Mail extends \Illuminate\Support\Facades\Mail
-    {
-    }
-
-    class Notification extends \Illuminate\Support\Facades\Notification
-    {
-    }
-
-    class Password extends \Illuminate\Support\Facades\Password
-    {
-    }
-
-    class Queue extends \Illuminate\Support\Facades\Queue
-    {
-    }
-
-    class Redirect extends \Illuminate\Support\Facades\Redirect
-    {
-    }
-
-    class Request extends \Illuminate\Support\Facades\Request
-    {
-    }
-
-    class Response extends \Illuminate\Support\Facades\Response
-    {
-    }
-
-    class Route extends \Illuminate\Support\Facades\Route
-    {
-    }
-
-    class Schema extends \Illuminate\Support\Facades\Schema
-    {
-    }
-
-    class Session extends \Illuminate\Support\Facades\Session
-    {
-    }
-
-    class Storage extends \Illuminate\Support\Facades\Storage
-    {
-    }
-
-    class URL extends \Illuminate\Support\Facades\URL
-    {
-    }
-
-    class Validator extends \Illuminate\Support\Facades\Validator
-    {
-    }
-
-    class View extends \Illuminate\Support\Facades\View
-    {
-    }
-
-    class Debugbar extends \Barryvdh\Debugbar\Facade
-    {
-    }
 }
 
 
