@@ -81,12 +81,14 @@
     </header>
 
     <main class="app-content py-4">
-        @yield('content')
+        <div class="container">
+            @yield('content')
+        </div>
     </main>
 
-    <footer>
+    <footer class="border-top ">
         <div class="container">
-            <div class="border-top pt-3">
+            <div class="pt-3">
                 <p>&copy; {{date('Y')}} - Avito</p>
             </div>
         </div>
