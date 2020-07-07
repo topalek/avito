@@ -3,7 +3,7 @@
 
 /**
  * A helper file for Laravel, to provide autocomplete information to your IDE
- * Generated for Laravel 5.7.29 on 2020-07-07 09:53:58.
+ * Generated for Laravel 5.7.29 on 2020-07-07 12:48:06.
  *
  * This file should not be included in your code, only analyzed by your IDE!
  *
@@ -18686,14 +18686,14 @@ namespace {
         {
             /** @var \Illuminate\Database\Query\Builder $instance */
             return $instance->insertGetId($values, $sequence);
-        }
+            }
 
-        /**
-         * Insert new records into the table using a subquery.
-         *
-         * @param array                                              $columns
-         * @param \Closure|\Illuminate\Database\Query\Builder|string $query
-         * @return bool
+            /**
+             * Insert new records into the table using a subquery.
+             *
+             * @param array $columns
+             * @param \Closure|\Illuminate\Database\Query\Builder|string $query
+             * @return bool
              * @static
              */
             public static function insertUsing($columns, $query)
