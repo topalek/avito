@@ -3,45 +3,56 @@
 namespace App\Http\Controllers\Auth;
 
 use App\Http\Controllers\Controller;
-use App\User;
-use Illuminate\Foundation\Auth\RegistersUsers;
-use Illuminate\Support\Facades\Hash;
-use Illuminate\Support\Facades\Validator;
+use App\Http\Requests\Auth\RegisterRequest;
+use App\Mail\Auth\VerifyEmail;
+use App\Models\User;
+use Illuminate\Auth\Events\Registered;
 use Illuminate\Support\Str;
+use Mail;
 
 class RegisterController extends Controller
 {
-    use RegistersUsers;
-
-    protected $redirectTo = '/';
-
     public function __construct()
     {
         $this->middleware('guest');
     }
 
-    protected function validator(array $data)
+    public function showRegistrationForm()
     {
-        return Validator::make(
-            $data,
-            [
-                'name'     => ['required', 'string', 'max:255'],
-                'email'    => ['required', 'string', 'email', 'max:255', 'unique:users'],
-                'password' => ['required', 'string', 'min:6', 'confirmed'],
-            ]
-        );
+        return view('auth.register');
     }
 
-    protected function create(array $data)
+    public function register(RegisterRequest $request)
     {
-        return User::create(
+        $user = User::create(
             [
-                'name'         => $data['name'],
-                'email'        => $data['email'],
-                'password'     => Hash::make($data['password']),
+                'name'         => $request['name'],
+                'email'        => $request['email'],
+                'password'     => bcrypt($request['password']),
                 'verify_token' => Str::random(),
-                'starus'       => User::STATUS_WAIT,
+                'status'       => User::STATUS_WAIT,
             ]
         );
+        Mail::to($user->email)->send(new VerifyEmail($user));
+        event(new Registered($user));
+        return redirect()->route('login')->with('succes', 'Check your email to verify your account.');
     }
+
+    public function verify($token)
+    {
+        if (!$user = User::where('verify_token', $token)->first()) {
+            return redirect()->route('login')
+                ->with('error', 'Sorry your link cannot be identified.');
+        }
+        if ($user->status !== User::STATUS_WAIT) {
+            return redirect()->route('login')
+                ->with('error', 'Your email is already verified.');
+        }
+        $user->status = User::STATUS_ACTIVE;
+        $user->verify_token = User::STATUS_ACTIVE;
+        $user->save();
+        return redirect()->route('login')
+            ->with('success', 'Your email is verified. You can login now');
+    }
+
 }
